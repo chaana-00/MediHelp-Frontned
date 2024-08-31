@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/mdb.min.css"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+
+    <link href="../assets/images/logo-trans.png" rel="icon">
+    <link href="../assets/images/logo-trans.png" rel="apple-touch-icon">
+    <link href="../https://fonts.googleapis.com" rel="preconnect">
+    <link href="../https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+    <link href="../assets/user/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/user/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../assets/user/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../assets/user/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../assets/user/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="../assets/user/css/main.css" rel="stylesheet">
+
+    <title>MediHelp - Admin </title>
+</head>
+
+<body>
+
+
+<header id="header" class="header sticky-top" style="display: flex; flex-direction: column;">
+    <div class="topbar d-flex align-items-center w-100">
+        <div class="container w-100 d-flex justify-content-center justify-content-md-between">
+            <div class="contact-info d-flex align-items-center w-100">
+                <i class="bi bi-envelope d-flex align-items-center"><a
+                        href="mailto:info.medihelphospital@gmail.com">info@medihelphospital.com</a></i>
+                <i class="bi bi-phone d-flex align-items-center ms-4"><span>+94 70 228 5959</span></i>
+            </div>
+
+            <div style="width: 500px;">
+
+            </div>
+
+            <div class="social-links d-none d-md-flex align-items-center">
+                <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="branding d-flex align-items-center w-100">
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center me-auto">
+                <img src="../assets/images/Full-Logo-medihelp.png" style="height: 50%; width: auto;">
+            </a>
+            <nav id="navmenu" class="navmenu" style="margin-left: 10px;">
+                <ul>
+                    <li><a style="text-decoration: none; cursor: pointer;" id="btnHome">Home<br></a></li>
+                    <li><a style="text-decoration: none; cursor: pointer;" id="btnAdminUser">Users</a></li>
+                    <li><a style="text-decoration: none; cursor: pointer;" id="btnAdminDoctors">Doctors</a></li>
+                    <li><a style="text-decoration: none; cursor: pointer;" id="btnAdminPredictionHistory">Prediction
+                        History</a></li>
+                    <li><a style="text-decoration: none; cursor: pointer;" href="display_table.php">Contact Details</a></li>
+                    <li><a style="text-decoration: none; cursor: pointer; " href="../index.html">Log Out</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+<div class="main-panel m-0 p-0" style="background-color:white !important;">
+
+    <div style="display: block" id="adminDashBoard">
+        <div class="container-fluid">
+            <div class="col-lg-12 p-0">
+                <div class="row">
+                    <div class="col">
+                        <div class="main-content">
+                            <section class="cards">
+                                <div class="card dash_card">
+                                    <h4 style="margin-top: 10px; color: white;">Total Users</h4>
+                                    <h3 id="lblTotalUsers"
+                                        style="margin-top: 15px; color: white; font-weight: 500;">0</h3>
+                                </div>
+                                <div class="card dash_card">
+                                    <h4 style="margin-top: 10px; color: white;">Total Skin</h4>
+                                    <h3 id="lblTotalDoctors"
+                                        style="margin-top: 15px; color: white; font-weight: 500;">0</h3>
+                                </div>
+                                <div class="card dash_card">
+                                    <h4 style="margin-top: 5px; color: white;">Predictions For User Under 18</h4>
+                                    <h3 id="lblPredictionUser20"
+                                        style="color: white; font-weight: 500;">0</h3>
+                                </div>
+
+                                <div class="card dash_card">
+                                    <h4 style="margin-top: 5px; color: white;">There Are More Skin Diseases in</h4>
+                                    <h3 id="lblMostGender"
+                                        style="color: white; font-weight: 500;"></h3>
+                                </div>
+                            </section>
+
+                            <section class="charts" style="display: flex; margin-top: -75px;">
+                                <div class="chart-container" style="position: relative; height:40vh; width:80vw;">
+                                    <canvas id="totalUsersChart"></canvas>
+                                </div>
+                                <div class="chart-container"
+                                     style="position: relative; height:40vh; width:80vw; margin-left: 150px;">
+                                    <canvas id="totalSkinChart"></canvas>
+                                </div>
+                                <div class="chart-container"
+                                     style="position: relative; height:40vh; width:80vw; margin-left: 150px;">
+                                    <canvas id="predictionsChart"></canvas>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: none" id="adminUserPage">
+        <div class="container-fluid">
+            <h3 class="text-dark mb-4 mt-4"></h3>
+            <div class="col-lg-12 p-0">
+                <div class="row">
+                    <div class="col">
+                        <div class=" shadow mb-3">
+                            <div class="card-header py-3 bg-primary text-white">
+                                <p class="m-0 font-weight-bold">Users Management</p>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>User Name</strong></label>
+                                                <input id="userName" class="form-control" type="text"
+                                                       placeholder="Name" name="userName">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>User Email</strong></label>
+                                                <input id="userEmail" class="form-control" type="text"
+                                                       placeholder="email" name="userEmail">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>User Nic</strong></label>
+                                                <input id="userNic" class="form-control" type="text"
+                                                       placeholder="nic" name="userNic">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>User Age</strong></label>
+                                                <input id="userAge" class="form-control" type="number"
+                                                       placeholder="age" name="userAge">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>Gender</strong></label>
+                                                <select id="userGender"
+                                                        class="form-control">
+                                                    <option value="" disabled selected>Select Gender</option>
+                                                    <option value="Women">Women</option>
+                                                    <option value="Men">Men</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>User Address</strong></label>
+                                                <input id="userAddress" class="form-control" type="text"
+                                                       placeholder="address" name="userAddress">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>User Mobile</strong></label>
+                                                <input id="userMobile" class="form-control" type="number"
+                                                       placeholder="mobile" name="userMobile">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>File Upload</strong></label>
+                                                <input type="file" id="userImageFile" class="form-control"
+                                                       onchange="previewImage()"/>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <img src="../assets/images/logo-trans.png"
+                                                     style="width: 100px; margin-left: 100px" id="userImage">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <button id="btnAdminUserSave" class="btn btn-sm btn-success btnWidth"
+                                                type="button">
+                                            Save
+                                        </button>
+                                        <button id="btnAdminUserUpdate" class="btn btn-sm btn-warning btnWidth"
+                                                type="button">
+                                            Update
+                                        </button>
+                                        <button id="btnAdminUserDelete" class="btn btn-sm btn-danger btnWidth"
+                                                type="button">
+                                            Delete
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-box" style="height: 250px;">
+                <div class="table-responsive-lg">
+                    <table class="table table-hover">
+                        <thead class="text-white bg-primary" id="tblAdminUser">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Email Address</th>
+                            <th scope="col">Nic</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Mobile</th>
+                            <th scope="col">Img</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tblAdminUserBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: none" id="adminDoctorPage">
+        <div class="container-fluid">
+            <h3 class="text-dark mb-4 mt-4"></h3>
+            <div class="col-lg-12 p-0">
+                <div class="row">
+                    <div class="col">
+                        <div class=" shadow mb-3">
+                            <div class="card-header py-3 bg-primary text-white">
+                                <p class="m-0 font-weight-bold">Doctor Management</p>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>Doctor Name</strong></label>
+                                                <input id="docName" class="form-control" type="text"
+                                                       placeholder="Name" name="docName">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>Doctor Hospital</strong></label>
+                                                <input id="docHospital" class="form-control" type="text"
+                                                       placeholder="hospital" name="docHospital">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>Doctor Contact</strong></label>
+                                                <input id="docContact" class="form-control" type="text"
+                                                       placeholder="contact" name="docContact">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>User Age</strong></label>
+                                                <input id="docSpecifications" class="form-control" type="text"
+                                                       placeholder="specifications" name="docSpecifications">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <button id="btnAdminDoctorSave" class="btn btn-sm btn-success btnWidth"
+                                                type="button">
+                                            Save
+                                        </button>
+                                        <button id="btnAdminDoctorUpdate" class="btn btn-sm btn-warning btnWidth"
+                                                type="button">
+                                            Update
+                                        </button>
+                                        <button id="btnAdminDoctorDelete" class="btn btn-sm btn-danger btnWidth"
+                                                type="button">
+                                            Delete
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-box" style="height: 250px;">
+                <div class="table-responsive-lg">
+                    <table class="table table-hover">
+                        <thead class="text-white bg-primary" id="tblAdminDoctor">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Hospital</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Specifications</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tblAdminDoctorBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: none" id="adminPredictionHistoryPage">
+        <div class="container-fluid">
+            <h3 class="text-dark mb-4 mt-4"></h3>
+            <div class="table-box" style="height: 250px;">
+                <div class="table-responsive-lg">
+                    <table class="table table-hover">
+                        <thead class="text-white tbl-hed" id="tblAdminPredictionHistory">
+                        <tr>
+                            <th scope="col" class="bg-primary text-white">Id</th>
+                            <th scope="col" class="bg-primary text-white">User Id</th>
+                            <th scope="col" class="bg-primary text-white">Age</th>
+                            <th scope="col" class="bg-primary text-white">Date Time</th>
+                            <th scope="col" class="bg-primary text-white">Prediction</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tblAdminPredictionHistoryBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/moment.min.js"></script>
+<script src="../assets/js/mainFunctions.js"></script>
+<script src="../assets/js/mdb.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var ctx1 = document.getElementById('totalUsersChart').getContext('2d');
+        var ctx2 = document.getElementById('totalSkinChart').getContext('2d');
+        var ctx3 = document.getElementById('predictionsChart').getContext('2d');
+
+        var totalUsersChart = new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'Total Users',
+                    data: [65, 59, 80, 81, 56, 55, 40],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        var totalSkinChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'Total Skin',
+                    data: [28, 48, 40, 19, 86, 27, 90],
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        var predictionsChart = new Chart(ctx3, {
+            type: 'pie',
+            data: {
+                labels: ['Under 18', '18-25', '25-35', '35-45', '45-60', '60+'],
+                datasets: [{
+                    label: 'Predictions for User Under 18',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Predictions for User Under 18'
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+
+</html>

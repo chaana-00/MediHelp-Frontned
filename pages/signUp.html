@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediHelp - Sign Up </title>
+    <link rel="stylesheet" href="../assets/css/login.css"/>
+    <link rel="stylesheet" href="../assets/css/mdb.min.css"/>
+    <link rel="icon" href="../assets/images/logo-trans.png"/>
+</head>
+<body>
+
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+
+            <div class="col-md-8 col-lg-7 col-xl-6 auth-img">
+            </div>
+
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+
+                <div class="container-fluid justify-content-center align-items-center d-flex">
+                    <img src="../assets/images/logo-white-bg.jpg" class="auth-logo" alt="auth-logo">
+                </div>
+
+                <div class="mt-2 flex-row d-flex mt-3">
+                    <div class="form-outline">
+                        <input type="text" id="txtSignUpFullName" class="form-control form-control-lg txt-fields"/>
+                        <label class="form-label" for="txtSignUpFullName">Full Name</label>
+                    </div>
+                    <div class="text-space"></div>
+                    <div class="form-outline mb-3">
+                        <input type="email" id="txtSignUpEmail" class="form-control form-control-lg txt-fields"/>
+                        <label class="form-label" for="txtSignUpEmail">Email address</label>
+                    </div>
+                </div>
+
+                <div class="mt-2 flex-row d-flex mt-3">
+                    <div class="form-outline">
+                        <input type="text" id="txtSignUpNic" class="form-control form-control-lg txt-fields"/>
+                        <label class="form-label" for="txtSignUpNic">Nic</label>
+                    </div>
+                    <div class="text-space"></div>
+                    <div class="form-outline mb-3">
+                        <input type="number" id="txtSignUpAge" class="form-control form-control-lg txt-fields"/>
+                        <label class="form-label" for="txtSignUpAge">Age</label>
+                    </div>
+                </div>
+
+                <div class="mt-2 flex-row d-flex mt-3">
+                    <div class="form-outline">
+                        <input type="text" id="txtSignUpAddress" class="form-control form-control-lg txt-fields"/>
+                        <label class="form-label" for="txtSignUpAddress">Address</label>
+                    </div>
+                    <div class="text-space"></div>
+                    <div class="form-outline mb-3">
+                        <input type="number" id="txtSignUpMobile" class="form-control form-control-lg txt-fields"/>
+                        <label class="form-label" for="txtSignUpMobile">Mobile Number</label>
+                    </div>
+                </div>
+
+                <div class="mt-2 flex-row d-flex mt-3">
+
+                    <div class="form-outline">
+                        <select id="txtGender" class="form-control form-control-lg txt-fields">
+                            <option value=""></option>
+                            <option value="Women">Women</option>
+                            <option value="Men">Men</option>
+                        </select>
+                        <label class="form-label txt-fields-click" for="txtGender">Gender</label>
+                    </div>
+
+                    <div class="text-space"></div>
+
+                    <div class="form-outline">
+                        <input type="password" id="txtSignUpPassword" class="form-control form-control-lg txt-fields"/>
+                        <label class="form-label txt-fields-click" for="txtSignUpPassword">Password</label>
+                    </div>
+                </div>
+
+                <div class="mt-2 flex-row d-flex mt-4">
+                    <div class="form-outline">
+                        <input type="file" id="fileUpload" class="form-control form-control-lg txt-fields"/>
+                        <label class="form-label txt-fields-click" for="fileUpload">Upload Image</label>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-lg btn-block common-btn mt-4" id="btnSignUp">SIGN UP</button>
+
+                <div class="divider d-flex align-items-center my-4">
+                    <p class="text-center mx-2 mb-0 text-muted">Already Have an Account? <a class="btn-span"
+                                                                                            href="SignIn.html"> SIGN
+                        IN</a></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/auth.js"></script>
+<script src="../assets/js/mdb.umd.min.js"></script>
+</body>
+</html>
